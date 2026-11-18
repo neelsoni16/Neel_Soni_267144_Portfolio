@@ -1,0 +1,177 @@
+/* Colors (changed for dark mode in the .dark class below) */
+:root {
+  --bg: #f5f7fa;
+  --text: #222;
+  --card: #fff;
+  --accent: #2563eb;
+}
+
+body.dark {
+  --bg: #121826;
+  --text: #eee;
+  --card: #1f2937;
+  --accent: #60a5fa;
+}
+
+/* Element selectors */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 20px;
+  background: var(--accent);
+  color: white;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--accent);
+  color: white;
+}
+
+/* Class selectors */
+.logo {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-list li {
+  background: var(--accent);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effects */
+nav a:hover {
+  text-decoration: underline;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* ID selectors */
+#menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#theme-btn {
+  margin-left: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#contact-form button {
+  padding: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#form-msg {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Media query: mobile screens */
+@media (max-width: 600px) {
+  #menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a,
+  #theme-btn {
+    margin: 10px 0 0 0;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
